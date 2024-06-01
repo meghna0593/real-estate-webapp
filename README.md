@@ -1,0 +1,3 @@
+- To easily create gitignore for Python: npx gitignore python
+- To create a django project: django-admin startproject real_estate .
+- To create a django app: python3 manage.py startapp users

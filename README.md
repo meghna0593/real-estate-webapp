@@ -1,3 +1,10 @@
 - To easily create gitignore for Python: npx gitignore python
 - To create a django project: django-admin startproject real_estate .
 - To create a django app: python3 manage.py startapp users
+- Setup Postgres
+  - Install Postgres: brew install postgresql
+  - Connect to Postgres as the default user or create a new user: pqsl postgres OR psql -U postgres
+  - Create a new superuser: CREATE USER local_admin WITH SUPERUSER PASSWORD 'xxx';
+  - Create a new database: CREATE DATABASE estate;
+  - Grant all privileges on the db: GRANT ALL PRIVILEGES ON DATABASE estate TO local_admin;
+  - Quit psql shell: \q

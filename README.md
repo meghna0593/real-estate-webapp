@@ -8,3 +8,21 @@
   - Create a new database: CREATE DATABASE estate;
   - Grant all privileges on the db: GRANT ALL PRIVILEGES ON DATABASE estate TO local_admin;
   - Quit psql shell: \q
+- You can generate a Signing key using secrets library
+  ```python 
+  import string
+  import secrets
+
+  def generate_signing_key(length=50):
+      characters = string.ascii_letters + string.digits + string.punctuation
+      return ''.join(secrets.choice(characters) for _ in range(length))
+
+  SIGNING_KEY = generate_signing_key()
+  print(SIGNING_KEY)
+
+- URLS:
+  - localhost:8000/api/v1/auth/users/ POST : to create user
+  - localhost:8000/api/v1/auth/users/activation/ : to activate user; get uid/token from the link in the email
+  - localhost:8000/api/v1/auth/jwt/create/ POST : for user login
+  - localhost:8000/api/v1/auth/users/reset_password/ POST : for password reset
+  - localhost:8000/api/v1/auth/users/reset_password_confirm/ POST : for setting new password
